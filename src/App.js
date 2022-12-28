@@ -1,21 +1,36 @@
-import './App.css';
+import './styles/App.css';
+import Header from './components/Header';
+import { Routes, Route } from 'react-router-dom';
+import Product from './components/Product';
+import { useState } from 'react';
+import data from './models/data.json';
+
+
+
+
+
+
+
 
 function App() {
+
+
+  const [product, setProduct] = useState(data);
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://imusicstore.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         View Example Mediastore App
-        </a>
-      </header>
+      <Header />
+      <Routes>
+        <Route index path="/" element={
+    
+          <Product />
+        }/>
+        <Route path="/About"/>
+        <Route path="/Basket"/>
+      
+      </Routes>
     </div>
   );
 }
