@@ -1,5 +1,11 @@
+body {
+  background-color: rgb(247, 169, 169);
+}
+
 .App {
   text-align: center;
+  color: white;
+  
 }
 
 .App-header {
@@ -9,9 +15,23 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  
 }
 
 .App-link {
   color: #ca61fb;
 }
 
+#navigation {
+  text-align: center;
+
+ flex-direction: row;
+ align-items: center;
+
+ text-decoration: none;
+
+}
+
+a {
+  color: white;
+}
