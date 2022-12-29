@@ -17,7 +17,7 @@ import Basket from './Basket';
 function App() {
 
 
-  const [product, setProduct] = useState(data);
+  const [products, setProduct] = useState(data);
 
 
 
@@ -26,8 +26,18 @@ function App() {
       <Header />
       <Routes>
         <Route index path="/" element={ 
-  
-          <Product />
+          <>
+          {products.map((products) => (
+            <Product
+            // handleClick={addBook}
+            //       onClick={() => addBookToCart(book)}
+              id={products.artistId}
+              product={products}
+              key={products.trackId}
+            />
+          ))}
+       
+       </>
         }/>
         <Route path="/About" element={<About />}/>
         <Route path="/Basket" element={<Basket />}/>
