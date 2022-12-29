@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Product from './components/Product';
 import { useState } from 'react';
 import data from './models/data.json';
+import About from './About';
+import Basket from './Basket';
 
 
 
@@ -15,7 +17,7 @@ import data from './models/data.json';
 function App() {
 
 
-  const [product, setProduct] = useState(data);
+  const [products, setProduct] = useState(data);
 
 
 
@@ -23,12 +25,22 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route index path="/" element={
-    
-          <Product />
+        <Route index path="/" element={ 
+          <>
+          {products.map((products) => (
+            <Product
+            // handleClick={addBook}
+            //       onClick={() => addBookToCart(book)}
+              id={products.artistId}
+              product={products}
+              key={products.trackId}
+            />
+          ))}
+       
+       </>
         }/>
-        <Route path="/About"/>
-        <Route path="/Basket"/>
+        <Route path="/About" element={<About />}/>
+        <Route path="/Basket" element={<Basket />}/>
       
       </Routes>
     </div>
