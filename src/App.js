@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Product from './components/Product';
 import { useState } from 'react';
 import data from './models/data.json';
+import About from './About';
+import Basket from './Basket';
 
 
 
@@ -23,12 +25,12 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route index path="/" element={
-    
+        <Route index path="/" element={ 
+  
           <Product />
         }/>
-        <Route path="/About"/>
-        <Route path="/Basket"/>
+        <Route path="/About" element={<About />}/>
+        <Route path="/Basket" element={<Basket />}/>
       
       </Routes>
     </div>

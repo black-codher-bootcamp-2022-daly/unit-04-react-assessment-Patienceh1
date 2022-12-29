@@ -5,10 +5,12 @@ body {
 .App {
   text-align: center;
   color: white;
+  display: flex;
+  flex-direction: column;
   
 }
 
-.App-header {
+/* .App-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,7 +18,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   
-}
+} */
 
 .App-link {
   color: #ca61fb;
@@ -24,7 +26,7 @@ body {
 
 #navigation {
   text-align: center;
-
+  
  flex-direction: row;
  align-items: center;
 

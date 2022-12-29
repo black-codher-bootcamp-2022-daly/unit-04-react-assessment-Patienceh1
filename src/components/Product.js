@@ -10,7 +10,8 @@ const Product = (props) => {
     return (
        <div>
         <ul>
-           <h2>{product.kind}</h2> 
+           <h2>{props.kind}</h2> 
+           <h2>{props.id}</h2>
         </ul>
        </div>
 
