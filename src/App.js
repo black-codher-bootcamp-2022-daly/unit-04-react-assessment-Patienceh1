@@ -4,8 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Product from './components/Product';
 import { useState } from 'react';
 import data from './models/data.json';
-import About from './About';
-import Basket from './Basket';
+import About from './pages/About';
+import Basket from './components/Basket';
 
 
 
@@ -23,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+     
       <Header />
       <Routes>
         <Route index path="/" element={ 
@@ -34,6 +35,12 @@ function App() {
               id={products.artistId}
               product={products}
               key={products.trackId}
+              kind={products.kind}
+              name={products.trackName}
+              thumbnail={products.artworkUrl100}
+              price={products.trackPrice}
+              // addToBasket={}
+              // removeFromBasket={}
             />
           ))}
        

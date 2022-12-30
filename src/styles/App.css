@@ -1,5 +1,7 @@
-body {
-  background-color: rgb(247, 169, 169);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
@@ -7,6 +9,7 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
+  
   
 }
 
@@ -20,20 +23,40 @@ body {
   
 } */
 
-.App-link {
-  color: #ca61fb;
-}
+
 
 #navigation {
-  text-align: center;
-  
+margin-top: 20px;
+  /* display: flex; */
  flex-direction: row;
  align-items: center;
 
  text-decoration: none;
+ 
 
 }
 
+.title {
+  /* display: flex; */
+  flex-direction: column;
+ 
+}
+
+#product-container {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: inherit;
+  padding: 5px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+
+
 a {
   color: white;
+  padding:0 !important;
+  margin: 0 !important;
 }
