@@ -8,6 +8,8 @@ const Product = (props) => {
   const { product } = props;
   return (
     <div id="product-container">
+        <img src={props.product.artworkUrl100}
+        alt={props.product.artistName} />
       <ul className="list">
         <h2>{props.product.trackName}</h2>
         <h2>{props.product.artistName}</h2>
@@ -15,9 +17,8 @@ const Product = (props) => {
           {props.product.trackPrice}
           {props.product.currency}
         </h4>
-        <img src={props.product.artworkUrl100}
-        alt={props.product.artistName} />
       </ul>
+      <button className="add-button" onClick={() => props.addToBasket(props.product.trackId)}> { props.isInTheBasket ? "Remove" : "Add to basket"}</button>
     </div>
   );
 };

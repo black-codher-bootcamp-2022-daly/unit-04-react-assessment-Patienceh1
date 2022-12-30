@@ -13,7 +13,7 @@ console.log(product)
             <h1>Basket</h1>
             <h1>{product.length}</h1>
             {product.map((product) => (
-              <Product product={product} key={product.id} isInTheBasket={true} />
+              <Product product={product} key={product.trackId} isInTheBasket={true} />
             ))}
           </div>
         ) : (
