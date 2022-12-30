@@ -18,7 +18,16 @@ function App() {
 
 
   const [products, setProduct] = useState(data);
+  const [basket, setBasket] = useState([0]);
 
+
+  function addToBasket (products) {
+    const  newBasket = basket;
+    newBasket.push(products);
+    setBasket(newBasket);
+    console.log({newBasket, basket});
+
+  }
 
 
   return (
@@ -39,7 +48,7 @@ function App() {
               name={products.trackName}
               thumbnail={products.artworkUrl100}
               price={products.trackPrice}
-              // addToBasket={}
+              addToBasket={()=>addToBasket(products)}
               // removeFromBasket={}
             />
           ))}
@@ -47,7 +56,7 @@ function App() {
        </>
         }/>
         <Route path="/About" element={<About />}/>
-        <Route path="/Basket" element={<Basket />}/>
+        <Route path="/Basket" element={<Basket basket={basket} addToBasket={addToBasket}/>}/>
       
       </Routes>
     </div>

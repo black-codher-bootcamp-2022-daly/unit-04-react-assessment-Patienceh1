@@ -44,19 +44,40 @@ margin-top: 20px;
 
 #product-container {
   margin-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border-bottom: 1px solid white;
+  
   display: flex;
-  flex-direction: inherit;
+  align-items: inherit;
+  
   padding: 5px 10px;
   padding-left: 10px;
   padding-right: 10px;
+  text-align: start;
+ 
   
 }
 
+.list {
+  font-size: 16px;
+  padding-left: 20px;
+  float: right;
+}
+
+img{
+  max-width: 100px;
+  flex-basis: 40%;
+  float: inline-start;
+
+}
 
 a {
   color: white;
   padding:0 !important;
   margin: 0 !important;
+}
+
+.add-button {
+ margin: 25px;
+ margin-right: 100px;
 }
