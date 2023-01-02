@@ -1,24 +1,36 @@
 import React from "react";
 import Product from "./Product";
+import PropTypes from "prop-types";
 
+const ProductList = ({ products, ...props }) => {
+  console.log(props);
 
+  return (
+    <div>
+      <h1>Suggested For You</h1>
+      {products.length === 0 ? (
+        <h1>No items found</h1>
+      ) : (
+        products.map((product) => (
+          <Product
+            product={product}
+            id={product.trackId}
+            key={product.trackId}
+            name={product.trackName}
+            {...props}
+            thumbnail={product.artworkUrl100}
+            price={props.trackPrice}
+            addToBasket={props.addToBasket}
+          />
+        ))
+      )}
+    </div>
+  );
+};
 
-export default function ProductList ({product}) {
-console.log(product)
+export default ProductList;
 
-    return (
-        <div>
-        {product[0] ? (
-          <div>
-            <h1>Basket</h1>
-            <h1>{product.length}</h1>
-            {product.map((product) => (
-              <Product product={product} key={product.trackId} isInTheBasket={true} />
-            ))}
-          </div>
-        ) : (
-          <h1>No books yet</h1>
-        )}
-      </div>
-    );
-}
+// ProductList.prototypes = {
+// product: PropTypes.array.isRequired
+
+// }

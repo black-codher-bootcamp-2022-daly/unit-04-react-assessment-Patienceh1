@@ -6,6 +6,7 @@ import { useState } from 'react';
 import data from './models/data.json';
 import About from './pages/About';
 import Basket from './components/Basket';
+import ProductList from './components/ProductList';
 
 
 
@@ -18,15 +19,24 @@ function App() {
 
 
   const [products, setProduct] = useState(data);
-  const [basket, setBasket] = useState([0]);
+  const [basket, setBasket] = useState([]);
 
 
-  function addToBasket (products) {
-    const  newBasket = basket;
-    newBasket.push(products);
-    setBasket(newBasket);
-    console.log({newBasket, basket});
-
+  function addToBasket (trackId) {
+    products.map((product) => {
+      if(product.trackId === trackId)
+      { 
+        console.log(product)
+        setBasket(prev => [...prev,product])
+        
+      }
+    })
+    
+    // const  newBasket = basket;
+    // newBasket.push(products);
+    // setBasket(newBasket);
+    // console.log({newBasket, basket});
+// console.log(products)
   }
 
 
@@ -37,21 +47,13 @@ function App() {
       <Routes>
         <Route index path="/" element={ 
           <>
-          {products.map((products) => (
-            <Product
-            // handleClick={addBook}
-            //       onClick={() => addBookToCart(book)}
-              id={products.artistId}
-              product={products}
-              key={products.trackId}
-              kind={products.kind}
-              name={products.trackName}
-              thumbnail={products.artworkUrl100}
-              price={products.trackPrice}
-              addToBasket={()=>addToBasket(products)}
+          
+            <ProductList
+            products={products}
+              addToBasket={addToBasket}
               // removeFromBasket={}
             />
-          ))}
+        
        
        </>
         }/>
