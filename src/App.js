@@ -13,15 +13,36 @@ function App() {
   const [products, setProducts] = useState(data);
   const [basket, setBasket] = useState([]);
   const [keyword, setKeyword] = useState("");
+  const [removeProduct, setRemoveProduct] = useState(basket);
 
   function addToBasket(trackId) {
     products.map((product) => {
       if (product.trackId === trackId) {
+        product.isInTheBasket = true;
         console.log(product);
         setBasket((prev) => [...prev, product]);
       }
     });
   }
+
+  function removeFromBasket(trackId) {
+    const removeFromCart = removeProduct.filter((products)=> products.trackId !== trackId);
+    basket.shift(trackId);
+    setRemoveProduct(removeFromCart);
+    
+    // console.log(removeFromCart,basket)
+    // products.map((product) => {
+    //   if (product.trackId === trackId) {
+    //     product.isInTheBasket = false;
+    //     console.log(product);
+    //     setBasket();
+        
+    //   }
+    // });
+  
+  }
+
+
 
   console.log(products);
 
@@ -59,8 +80,7 @@ function App() {
               <ProductList
                 products={products}
                 addToBasket={addToBasket}
-                //id={results}
-                // removeFromBasket={}
+                removeFromBasket={removeFromBasket}
               />
             </Container>
           }
@@ -68,7 +88,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route
           path="/Basket"
-          element={<Basket basket={basket} addToBasket={addToBasket} />}
+          element={<Basket basket={basket} addToBasket={addToBasket}  removeFromBasket={removeFromBasket}/>}
         />
       </Routes>
     </div>
