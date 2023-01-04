@@ -3,7 +3,7 @@ import Product from "./Product";
 
 
 
-export default function Basket ({basket}) {
+export default function Basket ({removeFromBasket, basket}) {
  console.log(basket)
 
     return (
@@ -13,7 +13,7 @@ export default function Basket ({basket}) {
             <h1>Basket</h1>
             <h1>{basket.length}</h1>
             {basket.map((product) => (
-              <Product product={product} key={product.trackId} isInTheBasket={true} />
+              <Product product={product} key={product.trackId} isInTheBasket={true} removeFromBasket={removeFromBasket} />
             ))}
           </div>
         ) : (

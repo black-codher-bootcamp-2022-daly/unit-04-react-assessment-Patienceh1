@@ -21,6 +21,7 @@ const ProductList = ({ products, ...props }) => {
             thumbnail={product.artworkUrl100}
             price={props.trackPrice}
             addToBasket={props.addToBasket}
+            
           />
         ))
       )}
