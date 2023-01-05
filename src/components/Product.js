@@ -5,7 +5,7 @@ import App from "../App";
 const Product = ({product,...props}) => {
   console.log(props)
 
-  const {  trackName, trackId, artistName, trackPrice, currency, artworkUrl100 } = product ;
+  const {  trackName, trackId, artistName, trackPrice, artworkUrl100 } = product ;
   return (
     <div id={"product-container"}>
         <img src={artworkUrl100}
@@ -13,10 +13,7 @@ const Product = ({product,...props}) => {
       <ul className="list">
         <h2>{trackName}</h2>
         <h2>{artistName}</h2>
-        <h4>
-          {trackPrice}
-          {currency}
-        </h4>
+        <h4>{trackPrice?"£"+trackPrice:"-"} </h4>
       </ul>
       <div className="buttons">
         {product.isInTheBasket ? 
@@ -29,3 +26,7 @@ const Product = ({product,...props}) => {
 };
 
 export default Product;
+
+Product.propTypes ={
+    trackPrice: PropTypes.number
+}
