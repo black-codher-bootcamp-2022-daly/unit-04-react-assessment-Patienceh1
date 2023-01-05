@@ -12,6 +12,7 @@ import Container from "./components/Container";
 function App() {
   const [products, setProducts] = useState(data);
   const [basket, setBasket] = useState([]);
+  const [total, setTotal] = useState(0);
   const [keyword, setKeyword] = useState("");
   const [removeProduct, setRemoveProduct] = useState(basket);
 
@@ -21,6 +22,7 @@ function App() {
         product.isInTheBasket = true;
         console.log(product);
         setBasket((prev) => [...prev, product]);
+        setTotal(total + product.trackPrice)
       }
     });
   }
@@ -29,7 +31,7 @@ function App() {
     const removeFromCart = removeProduct.filter((products)=> products.trackId !== trackId);
     basket.shift(trackId);
     setRemoveProduct(removeFromCart);
-    
+    setTotal(total - products.trackPrice)
     // console.log(removeFromCart,basket)
     // products.map((product) => {
     //   if (product.trackId === trackId) {
@@ -65,7 +67,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <Routes>
         <Route
           index
@@ -85,12 +86,13 @@ function App() {
             </Container>
           }
         />
-        <Route path="/About" element={<About />} />
+        <Route path="/about" element={<About />} />
         <Route
-          path="/Basket"
-          element={<Basket basket={basket} addToBasket={addToBasket}  removeFromBasket={removeFromBasket}/>}
+          path="/basket"
+          element={<Basket basket={basket} addToBasket={addToBasket}  removeFromBasket={removeFromBasket} basketTotal={total}/>}
         />
       </Routes>
+    
     </div>
   );
 }

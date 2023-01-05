@@ -7,10 +7,10 @@ return <div id="navigation"><h1 className="title">Media store</h1>
     <Link to="/" id="homelink"> <h4>Home</h4></Link>
 </div>
 <div>
-    <Link to="/About" id="aboutlink"><h4>About </h4></Link> 
+    <Link to="/about" id="aboutlink"><h4>About </h4></Link> 
 </div>
 <div>
-    <Link to="/Basket" id="basketlink"><h4>Basket</h4></Link> 
+    <Link to="/basket" id="basketlink"><h4>Basket</h4></Link> 
 </div>
 </div>
 }
