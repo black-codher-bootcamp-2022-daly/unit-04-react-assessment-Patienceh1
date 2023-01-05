@@ -67,7 +67,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <Routes>
         <Route
           index
@@ -87,12 +86,13 @@ function App() {
             </Container>
           }
         />
-        <Route path="/About" element={<About />} />
+        <Route path="/about" element={<About />} />
         <Route
-          path="/Basket"
+          path="/basket"
           element={<Basket basket={basket} addToBasket={addToBasket}  removeFromBasket={removeFromBasket} basketTotal={total}/>}
         />
       </Routes>
+    
     </div>
   );
 }

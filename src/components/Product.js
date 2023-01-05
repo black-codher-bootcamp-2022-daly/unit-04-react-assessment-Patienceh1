@@ -13,7 +13,7 @@ const Product = ({product,...props}) => {
       <ul className="list">
         <h2>{trackName}</h2>
         <h2>{artistName}</h2>
-        <h4>{trackPrice?"£"+trackPrice:"-"} </h4>
+        <h4>{trackPrice?"£"+trackPrice:"0"} </h4>
       </ul>
       <div className="buttons">
         {product.isInTheBasket ? 
