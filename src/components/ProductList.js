@@ -9,10 +9,10 @@ const ProductList = ({ products, ...props }) => {
     <div>
       <h1 className="title">Suggested For You</h1>{" "}
       {(!products || products.length === 0) ? (
-        <div className="empty">No items found</div>
+        <div className="empty">No items found...</div>
       ) : (
         products.map((product) => (
-            <div className="product" key={item.trackId}>
+            <div className="product" key={product.trackId}>
           <Product
             item={product}
             id={product.trackId}
