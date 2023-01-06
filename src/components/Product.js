@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import App from "../App";
 
-const Product = ({product,...props}) => {
+const Product = ({item,...props}) => {
   console.log(props)
 
-  const {  trackName, trackId, artistName, trackPrice, artworkUrl100 } = product ;
+  const {  trackName, trackId, artistName, trackPrice, artworkUrl100 } = item ;
   return (
     <div id={"product-container"}>
         <img src={artworkUrl100}
@@ -16,7 +16,7 @@ const Product = ({product,...props}) => {
         <h4>{trackPrice?"£"+trackPrice:"0"} </h4>
       </ul>
       <div className="buttons">
-        {product.inBasket ? 
+        {item.inBasket ? 
       <button  id="add-button" onClick={() => props.removeFromBasket(trackId)}> Remove</button> :
       <button  id="add-button" onClick={() => props.addToBasket(trackId)}> Add to basket</button>
         }

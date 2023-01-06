@@ -13,7 +13,7 @@ const ProductList = ({ products, ...props }) => {
       ) : (
         products.map((product) => (
           <Product
-            product={product}
+            item={product}
             id={product.trackId}
             key={product.trackId}
             name={product.trackName}
