@@ -82,6 +82,7 @@ function App() {
                 products={products}
                 addToBasket={addToBasket}
                 removeFromBasket={removeFromBasket}
+                itemCount={data.length}
               />
             </Container>
           }
