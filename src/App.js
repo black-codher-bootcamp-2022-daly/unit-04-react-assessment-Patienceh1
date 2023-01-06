@@ -113,7 +113,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header basketCount={count} />
+        <Header itemCount={count} />
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
