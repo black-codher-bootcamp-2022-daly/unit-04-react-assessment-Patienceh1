@@ -79,7 +79,7 @@ function App() {
                 search={search}
               />
               <ProductList
-                products={products}
+                items={products}
                 addToBasket={addToBasket}
                 removeFromBasket={removeFromBasket}
                 itemCount={data.length}
