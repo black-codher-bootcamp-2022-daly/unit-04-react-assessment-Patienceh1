@@ -21,7 +21,7 @@ const count = basket.length;
             ))}
           </div>
         ) : (
-          <h1>No products yet</h1>
+          <div className="empty">Sorry no items in basket...</div>
         )}
         <BasketTotal basketTotal={basketTotal} />
       </div>

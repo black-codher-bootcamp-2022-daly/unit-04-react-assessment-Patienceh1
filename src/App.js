@@ -61,7 +61,7 @@ function App() {
         )
       );
     }
-    // setProducts(results.items);
+   
   }
 
   return (

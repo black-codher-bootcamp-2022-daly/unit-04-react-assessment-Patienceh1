@@ -5,6 +5,8 @@ export default function Search(props) {
 
   function handleChange(changeEvent) {
     console.log("Someone Typed event =>", changeEvent);
+    // changeEvent.preventDefault();
+    // props.search(props.keyword);
     setKeyword(changeEvent.target.value);
   }
 
@@ -13,7 +15,7 @@ export default function Search(props) {
     search(keyword);
   }
   return (
-    <form id="searchAPI">
+    <form id="searchAPI" >
       <p style={{ color: "red" }}>
         <em>{keyword && "Keywords Typed: " + keyword}</em>
       </p>
