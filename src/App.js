@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import Header from "./components/Header";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route,  BrowserRouter as Router } from "react-router-dom";
 import { useState } from "react";
 import data from "./models/data.json";
 import About from "./pages/About";
@@ -22,29 +22,28 @@ function App() {
         product.inBasket = true;
         console.log(product);
         setBasket((prev) => [...prev, product]);
-        setTotal(total + product.trackPrice)
+        setTotal(total + product.trackPrice);
       }
     });
   }
 
   function removeFromBasket(trackId) {
-    const removeFromCart = removeProduct.filter((products)=> products.trackId !== trackId);
+    const removeFromCart = removeProduct.filter(
+      (products) => products.trackId !== trackId
+    );
     basket.shift(trackId);
     setRemoveProduct(removeFromCart);
-    setTotal(total - products.trackPrice)
+    setTotal(total - products.trackPrice);
     // console.log(removeFromCart,basket)
     // products.map((product) => {
     //   if (product.trackId === trackId) {
     //     product.isInTheBasket = false;
     //     console.log(product);
     //     setBasket();
-        
+
     //   }
     // });
-  
   }
-
-
 
   console.log(products);
 
@@ -61,40 +60,44 @@ function App() {
         )
       );
     }
-   
   }
 
+  function BasketList() {
+    return (
+      <Basket
+        basket={basket}
+        addToBasket={addToBasket}
+        removeFromBasket={removeFromBasket}
+        basketTotal={total}
+      />
+    );
+  }
+
+  function Home() {
+    return (
+      <Container>
+        <Search term={term} setTerm={setTerm} search={search} />
+        <ProductList
+          items={products}
+          addToBasket={addToBasket}
+          removeFromBasket={removeFromBasket}
+          itemCount={data.length}
+        />
+      </Container>
+    );
+  }
   return (
+    <Router>
     <div className="App">
       <Header />
+
       <Routes>
-        <Route
-          index
-          path="/"
-          element={
-            <Container>
-              <Search
-                term={term}
-                setTerm={setTerm}
-                search={search}
-              />
-              <ProductList
-                items={products}
-                addToBasket={addToBasket}
-                removeFromBasket={removeFromBasket}
-                itemCount={data.length}
-              />
-            </Container>
-          }
-        />
+        <Route index path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route
-          path="/basket"
-          element={<Basket basket={basket} addToBasket={addToBasket}  removeFromBasket={removeFromBasket} basketTotal={total}/>}
-        />
+        <Route path="/basket" element={<BasketList />} />
       </Routes>
-    
     </div>
+    </Router>
   );
 }
 
