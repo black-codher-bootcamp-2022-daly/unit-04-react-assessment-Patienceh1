@@ -8,6 +8,7 @@ import Basket from "./components/Basket";
 import ProductList from "./components/ProductList";
 import Search from "./components/Search";
 import Container from "./components/Container";
+import BasketCount from "./components/BasketCount";
 
 function App() {
   const [products, setProducts] = useState(data);
@@ -83,6 +84,8 @@ function App() {
 
   function BasketList() {
     return (
+      <>
+      <BasketCount basketCount={basket.length}/>
       <Basket
         basket={basket}
         addToBasket={addToBasket}
@@ -90,6 +93,7 @@ function App() {
         basketTotal={total}
         basketCount={count}
       />
+      </>
     );
   }
 

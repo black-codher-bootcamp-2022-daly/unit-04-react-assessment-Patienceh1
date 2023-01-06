@@ -5,7 +5,7 @@ const BasketCount = (props) => {
 
 
     return (
-<div>
+<div className="basket-count">
     {props.BasketCount} items
 </div>
     );
