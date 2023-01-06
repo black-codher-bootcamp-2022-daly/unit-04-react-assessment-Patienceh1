@@ -15,6 +15,7 @@ function App() {
   const [total, setTotal] = useState(0);
   const [term, setTerm] = useState("");
   const [removeProduct, setRemoveProduct] = useState(basket);
+  const [count, setCount] = useState(0);
 
   function addToBasket(trackId) {
     products.map((product) => {
@@ -23,6 +24,7 @@ function App() {
         console.log(product);
         setBasket((prev) => [...prev, product]);
         setTotal(total + product.trackPrice);
+        setCount(count +1)
       }
     });
   }
@@ -34,6 +36,7 @@ function App() {
     basket.shift(trackId);
     setRemoveProduct(removeFromCart);
     setTotal(total - products.trackPrice);
+    setCount(count -1)
     // console.log(removeFromCart,basket)
     // products.map((product) => {
     //   if (product.trackId === trackId) {
@@ -89,8 +92,7 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <Header />
-
+      <Header basketCount={count}/>
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
