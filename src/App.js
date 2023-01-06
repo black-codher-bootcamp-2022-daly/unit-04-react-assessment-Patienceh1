@@ -88,6 +88,7 @@ function App() {
         addToBasket={addToBasket}
         removeFromBasket={removeFromBasket}
         basketTotal={total}
+        basketCount={count}
       />
     );
   }

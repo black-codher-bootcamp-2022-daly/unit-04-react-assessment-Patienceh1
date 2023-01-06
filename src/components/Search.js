@@ -5,8 +5,8 @@ import React from "react";
 
   function handleChange(changeEvent) {
     console.log("Someone Typed event =>", changeEvent);
-     changeEvent.preventDefault();
-    //  props.search(props.keyword);
+    // changeEvent.preventDefault();
+     props.search(props.term);
     setTerm(changeEvent.target.value);
   }
 
