@@ -5,7 +5,7 @@ import BasketTotal from "./BasketTotal";
 
 
 
-export default function Basket ({removeFromBasket, basket, basketTotal}) {
+export default function Basket ({removeFromBasket, basket, basketTotal, basketCount}) {
  console.log(basket)
 const count = basket.length;
     return (
@@ -13,7 +13,7 @@ const count = basket.length;
        
          
             <h1>Basket</h1>
-            <BasketCount BasketCount={count}/>
+            <BasketCount BasketCount={basketCount}/>
 
             {basket.length > 0 ? (
             basket.map((product) => (

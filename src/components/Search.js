@@ -6,12 +6,12 @@ import React from "react";
   function handleChange(changeEvent) {
     console.log("Someone Typed event =>", changeEvent);
     // changeEvent.preventDefault();
-    // props.search(props.keyword);
+     props.search(props.term);
     setTerm(changeEvent.target.value);
   }
 
   function onSubmit(event) {
-    event.preventDefault();
+   
     search(term);
   }
   return (

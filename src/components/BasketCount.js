@@ -1,12 +1,12 @@
 import React from "react";
 
 
-const BasketCount = (props) => {
+function BasketCount  (props)  {
 
 
     return (
 <div className="basket-count">
-    {props.BasketCount} {props.BasketCount!==1?"products":"product"}
+    {props.basketCount} items
 </div>
     );
 }
