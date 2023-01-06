@@ -7,11 +7,12 @@ const ProductList = ({ products, ...props }) => {
 
   return (
     <div>
-      <h1>Suggested For You</h1>{" "}
+      <h1 className="title">Suggested For You</h1>{" "}
       {(!products || products.length === 0) ? (
-        <h1>No items found</h1>
+        <div className="empty">No items found</div>
       ) : (
         products.map((product) => (
+            <div className="product" key={item.trackId}>
           <Product
             item={product}
             id={product.trackId}
@@ -23,6 +24,7 @@ const ProductList = ({ products, ...props }) => {
             addToBasket={props.addToBasket}
             
           />
+          </div>
         ))
       )}
     </div>
