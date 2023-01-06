@@ -15,7 +15,6 @@ function App() {
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
   const [term, setTerm] = useState("");
-  const [removeProduct, setRemoveProduct] = useState(basket);
   const [count, setCount] = useState(0);
 
   function addToBasket(trackId) {
@@ -54,22 +53,13 @@ function App() {
   
     
     setCount(count - 1);
-    // console.log(removeFromCart,basket)
-    // products.map((product) => {
-    //   if (product.trackId === trackId) {
-    //     product.isInTheBasket = false;
-    //     console.log(product);
-    //     setBasket();
 
-    //   }
-    // });
   }
 
   console.log(products);
 
   async function search(value) {
     const url = `https://itunes.apple.com/search?term=${value}&limit=30&explicit=no`;
-
     const results = await fetch(url).then((res) => res.json());
     if (!results.error) {
       setProducts(
@@ -85,7 +75,7 @@ function App() {
   function BasketList() {
     return (
       <>
-      <BasketCount basketCount={basket.length}/>
+      <BasketCount />
       <Basket
         basket={basket}
         addToBasket={addToBasket}
@@ -100,7 +90,7 @@ function App() {
   function Home() {
     return (
       <Container>
-        <Search term={term} setTerm={setTerm} search={search} />
+        <Search term={term} setTerm={setTerm} search={search}  />
         <ProductList
           items={products}
           addToBasket={addToBasket}
@@ -113,7 +103,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header itemCount={count} />
+        <Header basketCount={count} />
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
