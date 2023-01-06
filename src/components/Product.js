@@ -16,7 +16,7 @@ const Product = ({product,...props}) => {
         <h4>{trackPrice?"£"+trackPrice:"0"} </h4>
       </ul>
       <div className="buttons">
-        {product.isInTheBasket ? 
+        {product.inBasket ? 
       <button  id="add-button" onClick={() => props.removeFromBasket(trackId)}> Remove</button> :
       <button  id="add-button" onClick={() => props.addToBasket(trackId)}> Add to basket</button>
         }

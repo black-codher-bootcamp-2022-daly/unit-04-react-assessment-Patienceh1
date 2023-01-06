@@ -19,7 +19,7 @@ function App() {
   function addToBasket(trackId) {
     products.map((product) => {
       if (product.trackId === trackId) {
-        product.isInTheBasket = true;
+        product.inBasket = true;
         console.log(product);
         setBasket((prev) => [...prev, product]);
         setTotal(total + product.trackPrice)

@@ -17,7 +17,9 @@ const count = basket.length;
             
             {/* <h1>{basket.length}</h1> */}
             {basket.map((product) => (
-              <Product product={product} key={product.trackId} isInTheBasket={true} removeFromBasket={removeFromBasket} />
+                <div className="product" key={product.trackId}>
+              <Product product={product} key={product.trackId} inBasket={product.inBasket} removeFromBasket={removeFromBasket} />
+              </div>
             ))}
           </div>
         ) : (
