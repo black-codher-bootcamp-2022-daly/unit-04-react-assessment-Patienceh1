@@ -13,7 +13,7 @@ function App() {
   const [products, setProducts] = useState(data);
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
-  const [keyword, setKeyword] = useState("");
+  const [term, setTerm] = useState("");
   const [removeProduct, setRemoveProduct] = useState(basket);
 
   function addToBasket(trackId) {
@@ -74,8 +74,8 @@ function App() {
           element={
             <Container>
               <Search
-                keyword={keyword}
-                setKeyword={setKeyword}
+                term={term}
+                setTerm={setTerm}
                 search={search}
               />
               <ProductList
