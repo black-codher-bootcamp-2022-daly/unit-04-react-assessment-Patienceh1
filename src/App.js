@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import Header from "./components/Header";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import { useState } from "react";
 import data from "./models/data.json";
 import About from "./pages/About";
@@ -13,38 +13,56 @@ function App() {
   const [products, setProducts] = useState(data);
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
-  const [keyword, setKeyword] = useState("");
+  const [term, setTerm] = useState("");
   const [removeProduct, setRemoveProduct] = useState(basket);
+  const [count, setCount] = useState(0);
 
   function addToBasket(trackId) {
     products.map((product) => {
       if (product.trackId === trackId) {
-        product.isInTheBasket = true;
+        product.inBasket = true;
         console.log(product);
         setBasket((prev) => [...prev, product]);
-        setTotal(total + product.trackPrice)
+
+        if (product.trackPrice) {
+          setTotal(parseFloat(( total + product.trackPrice)));
+        } else {
+          setTotal(total + 0);
+        }
       }
+      console.log(setTotal);
+      setCount(count + 1);
     });
   }
 
   function removeFromBasket(trackId) {
-    const removeFromCart = removeProduct.filter((products)=> products.trackId !== trackId);
-    basket.shift(trackId);
-    setRemoveProduct(removeFromCart);
-    setTotal(total - products.trackPrice)
+    const removeFromCart= [];
+      basket.filter((products) => 
+      { if (products.trackId !== trackId) {
+        removeFromCart.push(products);
+      } else {
+        products.trackId = !products.trackId
+      if (products.trackPrice) {
+        setTotal(parseFloat((total - products.trackPrice)));
+      } }
+      }
+     
+    );
+  
+    setBasket(removeFromCart);
+  
+    
+    setCount(count - 1);
     // console.log(removeFromCart,basket)
     // products.map((product) => {
     //   if (product.trackId === trackId) {
     //     product.isInTheBasket = false;
     //     console.log(product);
     //     setBasket();
-        
+
     //   }
     // });
-  
   }
-
-
 
   console.log(products);
 
@@ -61,39 +79,43 @@ function App() {
         )
       );
     }
-    // setProducts(results.items);
   }
 
+  function BasketList() {
+    return (
+      <Basket
+        basket={basket}
+        addToBasket={addToBasket}
+        removeFromBasket={removeFromBasket}
+        basketTotal={total}
+      />
+    );
+  }
+
+  function Home() {
+    return (
+      <Container>
+        <Search term={term} setTerm={setTerm} search={search} />
+        <ProductList
+          items={products}
+          addToBasket={addToBasket}
+          removeFromBasket={removeFromBasket}
+          itemCount={data.length}
+        />
+      </Container>
+    );
+  }
   return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route
-          index
-          path="/"
-          element={
-            <Container>
-              <Search
-                keyword={keyword}
-                setKeyword={setKeyword}
-                search={search}
-              />
-              <ProductList
-                products={products}
-                addToBasket={addToBasket}
-                removeFromBasket={removeFromBasket}
-              />
-            </Container>
-          }
-        />
-        <Route path="/about" element={<About />} />
-        <Route
-          path="/basket"
-          element={<Basket basket={basket} addToBasket={addToBasket}  removeFromBasket={removeFromBasket} basketTotal={total}/>}
-        />
-      </Routes>
-    
-    </div>
+    <Router>
+      <div className="App">
+        <Header basketCount={count} />
+        <Routes>
+          <Route index path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/basket" element={<BasketList />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

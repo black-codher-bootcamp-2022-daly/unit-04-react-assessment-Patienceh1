@@ -1,29 +1,33 @@
 import React from "react";
 
-export default function Search(props) {
-  const { search, keyword, setKeyword } = props;
+ function Search(props) {
+  const { search, term, setTerm } = props;
 
   function handleChange(changeEvent) {
     console.log("Someone Typed event =>", changeEvent);
-    setKeyword(changeEvent.target.value);
+    // changeEvent.preventDefault();
+    // props.search(props.keyword);
+    setTerm(changeEvent.target.value);
   }
 
   function onSubmit(event) {
     event.preventDefault();
-    search(keyword);
+    search(term);
   }
   return (
-    <form id="searchAPI">
+    <form  className="Search" id="searchAPI" >
       <p style={{ color: "red" }}>
-        <em>{keyword && "Keywords Typed: " + keyword}</em>
+        <em>{term && "Keywords Typed: " + term}</em>
       </p>
       <input
+      className="test-input"
         type="text"
-        value={props.keyword}
+        value={props.term}
         onChange={handleChange}
         id="term"
       />
-      <input type="submit" onClick={onSubmit} />
+      <input className="Button-submit" type="submit" onClick={onSubmit} />
     </form>
   );
 }
+export default Search;

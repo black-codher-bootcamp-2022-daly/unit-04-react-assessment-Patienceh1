@@ -2,18 +2,19 @@ import React from "react";
 import Product from "./Product";
 import PropTypes from "prop-types";
 
-const ProductList = ({ products, ...props }) => {
-  console.log(products);
+const ProductList = ({ items, ...props }) => {
+  console.log(items);
 
   return (
     <div>
-      <h1>Suggested For You</h1>{" "}
-      {(!products || products.length === 0) ? (
-        <h1>No items found</h1>
+      <h1 className="title">Suggested For You</h1>{" "}
+      {(!items || items.length === 0) ? (
+        <div className="empty">No items found...</div>
       ) : (
-        products.map((product) => (
+        items.map((product) => (
+            <div className="product" key={product.trackId}>
           <Product
-            product={product}
+            item={product}
             id={product.trackId}
             key={product.trackId}
             name={product.trackName}
@@ -21,8 +22,9 @@ const ProductList = ({ products, ...props }) => {
             thumbnail={product.artworkUrl100}
             price={props.trackPrice}
             addToBasket={props.addToBasket}
-            
+            removeFromBasket={props.removeFromBasket}
           />
+          </div>
         ))
       )}
     </div>
