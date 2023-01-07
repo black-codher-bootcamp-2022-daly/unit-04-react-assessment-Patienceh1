@@ -13,7 +13,8 @@ const count = basket.length;
        
          
             <h1>Basket</h1>
-            <BasketCount BasketCount={basketCount}/>
+            
+            <BasketCount BasketCount={basketCount} count={count}/>
 
             {basket.length > 0 ? (
             basket.map((product) => (
