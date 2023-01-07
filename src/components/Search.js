@@ -1,12 +1,13 @@
 import React from "react";
 
  function Search(props) {
-  const { search, term } = props;
+  const { search, term, setTerm } = props;
 
   function handleChange(changeEvent) {
-    props.handleChange(changeEvent);
-    //  props.search(props.term);
-    // setTerm(changeEvent.target.value);
+    // props.handleChange(changeEvent);
+     props.search(props.term);
+    setTerm(changeEvent.target.value);
+  
   }
 
   function onSubmit(event) {
