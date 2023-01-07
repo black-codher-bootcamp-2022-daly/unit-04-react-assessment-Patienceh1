@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import Header from "./components/Header";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "./models/data.json";
 import About from "./pages/About";
 import Basket from "./components/Basket";
@@ -16,6 +16,16 @@ function App() {
   const [total, setTotal] = useState(0);
   const [term, setTerm] = useState("");
   const [count, setCount] = useState(0);
+
+  function handleChange(changeEvent) {
+    
+    //  props.search(props.term);
+   setTerm(changeEvent.target.value);
+  }
+
+  useEffect(()=> {
+    console.log("Someone Typed event =>", term);
+  },[term])
 
   function addToBasket(trackId) {
     products.map((product) => {
@@ -86,7 +96,7 @@ function App() {
   function Home() {
     return (
       <Container>
-        <Search term={term} setTerm={setTerm} search={search} />
+        <Search term={term} handleChange={handleChange} search={search} />
         <ProductList
           items={products}
           addToBasket={addToBasket}
@@ -99,7 +109,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header basketCount={count} />
+        <Header itemCount={count} />
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
