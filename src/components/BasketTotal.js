@@ -6,8 +6,8 @@ const BasketTotal = (props) => {
     currency: 'GBP'
  })
     return (
-        // <div className="total"> {formatter.format(Math.abs(props.basketTotal))}</div>
-    <div>{((props.basketTotal))}</div>
+        <div className="total"> {formatter.format(Math.abs(props.basketTotal))}</div>
+    // <div>{((props.basketTotal))}</div>
     )
 }
 

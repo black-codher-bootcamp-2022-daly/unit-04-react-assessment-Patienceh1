@@ -55,6 +55,7 @@ function App() {
         if (products.trackPrice) {
           setTotal(parseFloat(total - products.trackPrice));
         }
+        return products;
       }
     });
 
