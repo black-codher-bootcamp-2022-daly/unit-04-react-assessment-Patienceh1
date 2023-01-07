@@ -25,7 +25,7 @@ function App() {
         setBasket((prev) => [...prev, product]);
 
         if (product.trackPrice) {
-          setTotal(parseFloat(( total + product.trackPrice)));
+          setTotal(parseFloat(total + product.trackPrice));
         } else {
           setTotal(total + 0);
         }
@@ -36,24 +36,20 @@ function App() {
   }
 
   function removeFromBasket(trackId) {
-    const removeFromCart= [];
-      basket.filter((products) => 
-      { if (products.trackId !== trackId) {
+    const removeFromCart = [];
+    basket.filter((products) => {
+      if (products.trackId !== trackId) {
         removeFromCart.push(products);
       } else {
-        products.trackId = !products.trackId
-      if (products.trackPrice) {
-        setTotal(parseFloat((total - products.trackPrice)));
-      } }
+        products.trackId = !products.trackId;
+        if (products.trackPrice) {
+          setTotal(parseFloat(total - products.trackPrice));
+        }
       }
-     
-    );
-  
-    setBasket(removeFromCart);
-  
-    
-    setCount(count - 1);
+    });
 
+    setBasket(removeFromCart);
+    setCount(count - 1);
   }
 
   console.log(products);
@@ -75,14 +71,14 @@ function App() {
   function BasketList() {
     return (
       <>
-      <BasketCount />
-      <Basket
-        basket={basket}
-        addToBasket={addToBasket}
-        removeFromBasket={removeFromBasket}
-        basketTotal={total}
-        basketCount={count}
-      />
+        <BasketCount />
+        <Basket
+          basket={basket}
+          addToBasket={addToBasket}
+          removeFromBasket={removeFromBasket}
+          basketTotal={total}
+          basketCount={count}
+        />
       </>
     );
   }
@@ -90,7 +86,7 @@ function App() {
   function Home() {
     return (
       <Container>
-        <Search term={term} setTerm={setTerm} search={search}  />
+        <Search term={term} setTerm={setTerm} search={search} />
         <ProductList
           items={products}
           addToBasket={addToBasket}
