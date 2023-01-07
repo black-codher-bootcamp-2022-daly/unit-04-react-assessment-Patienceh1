@@ -4,9 +4,10 @@ import React from "react";
   const { search, term, setTerm } = props;
 
   function handleChange(changeEvent) {
-    props.handleChange(changeEvent);
+    // props.handleChange(changeEvent);
      props.search(props.term);
     setTerm(changeEvent.target.value);
+  
   }
 
   function onSubmit(event) {

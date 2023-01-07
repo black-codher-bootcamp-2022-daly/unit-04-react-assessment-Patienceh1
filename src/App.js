@@ -17,11 +17,7 @@ function App() {
   const [term, setTerm] = useState("");
   const [count, setCount] = useState(0);
 
-  function handleChange(changeEvent) {
-    
-    //  props.search(props.term);
-   setTerm(changeEvent.target.value);
-  }
+  
 
   useEffect(()=> {
     console.log("Someone Typed event =>", term);
@@ -97,7 +93,7 @@ function App() {
   function Home() {
     return (
       <Container>
-        <Search term={term} handleChange={handleChange} search={search} />
+        <Search term={term} setTerm={setTerm} search={search} />
         <ProductList
           items={products}
           addToBasket={addToBasket}
