@@ -1,20 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import App from "../App";
+
 
 const Product = ({item,...props}) => {
   console.log(props)
 
   const {  trackName, trackId, artistName, trackPrice, artworkUrl100 } = item ;
   return (
-    <div id={"product-container"}>
+    <div className={"product-container"}>
         <img src={artworkUrl100}
         alt={artistName} />
-      <ul className="list">
+      <div id={"product-items"}>
         <h2>{trackName}</h2>
         <h2>{artistName}</h2>
         <h4 className="price">{trackPrice?"£"+trackPrice:"0"} </h4>
-      </ul>
+      </div>
       <div className="buttons">
         {item.inBasket ? 
       <button  id="add-button" onClick={() => props.removeFromBasket(trackId)}> Remove</button> :
