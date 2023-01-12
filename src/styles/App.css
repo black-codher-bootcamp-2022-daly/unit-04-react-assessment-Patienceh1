@@ -17,7 +17,7 @@
 .App {
   text-align: center;
   
-  background-color: #C8C2BC;
+  background-color: rgb(116, 105, 105);
   /* display: flex;
   flex-direction: column; */
   
@@ -34,7 +34,11 @@
   
 } */
 
-
+.basket-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #navigation {
 margin: 0;
@@ -113,9 +117,8 @@ a {
   display: flex;
   padding: 15px 10px;
   border-radius: 5px;
-  float: right;
-  text-align: center;
-  align-items: center;
+  align-content: center;
+  justify-content: center;
   font-size: 0.8rem;
   background-color: white;
 }

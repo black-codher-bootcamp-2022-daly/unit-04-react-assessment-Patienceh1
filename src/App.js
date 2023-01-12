@@ -54,7 +54,7 @@ function App() {
       if (products.trackId !== trackId) {
         removeFromCart.push(products);
       } else {
-        products.trackId = !products.trackId;
+        products.inBasket = !products.inBasket;
         if (products.trackPrice) {
           setTotal(parseFloat(total - products.trackPrice));
         }
