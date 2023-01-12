@@ -97,13 +97,7 @@ a {
   margin: 0 !important;
 }
 
-#add-button {
 
-float: right;
-margin: 25px 100px 25px 25px;
- background-color: white;
- border-radius: 8%;
-}
 #searchAPI input[type=text]{
   border-radius: 5px;
   display: flex;
@@ -124,4 +118,13 @@ margin: 25px 100px 25px 25px;
   align-items: center;
   font-size: 0.8rem;
   background-color: white;
+}
+
+.buttons {
+  margin-left: auto;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-items: left;
+  min-width: 105px;
 }

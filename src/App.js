@@ -11,23 +11,30 @@ import Container from "./components/Container";
 import BasketCount from "./components/BasketCount";
 
 function App() {
-  const [products, setProducts] = useState(data);
+  const [products, setProducts] = useState(data.slice(0,10));
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
   const [term, setTerm] = useState("");
   const [count, setCount] = useState(0);
+  const [loadMoreVisible, setLoadMoreVisible] = useState(true);
 
-  
+  function getData(currentCount) {
+    if (currentCount == data.length - 10) setLoadMoreVisible(false);
+    return setProducts((currentProducts) => [
+      ...currentProducts,
+      ...data.slice(currentCount, currentCount + 10),
+    ]);
+  }
 
-  useEffect(()=> {
-    console.log("Someone Typed event =>", term);
-  },[term])
+  useEffect(() => {
+    // console.log("Someone Typed event =>", term);
+  }, [term]);
 
   function addToBasket(trackId) {
     products.map((product) => {
       if (product.trackId === trackId) {
         product.inBasket = true;
-        console.log(product);
+        // console.log(product);
         setBasket((prev) => [...prev, product]);
 
         if (product.trackPrice) {
@@ -36,7 +43,7 @@ function App() {
           setTotal(total + 0);
         }
       }
-      console.log(setTotal);
+      // console.log(setTotal);
       setCount(count + 1);
     });
   }
@@ -59,7 +66,7 @@ function App() {
     setCount(count - 1);
   }
 
-  console.log(products);
+  // console.log(products);
 
   async function search(value) {
     const url = `https://itunes.apple.com/search?term=${value}&limit=30&explicit=no`;
@@ -100,6 +107,9 @@ function App() {
           removeFromBasket={removeFromBasket}
           itemCount={data.length}
         />
+        { loadMoreVisible && <button onClick={() => getData(products.length)}>
+          Load More Products
+        </button>}
       </Container>
     );
   }
