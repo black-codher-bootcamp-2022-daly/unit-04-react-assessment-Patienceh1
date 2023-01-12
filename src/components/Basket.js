@@ -10,8 +10,6 @@ export default function Basket ({removeFromBasket, basket, basketTotal, basketCo
 const count = basket.length;
     return (
         <div>
-       
-         
             <h1>Basket</h1>
             
             <BasketCount BasketCount={basketCount} count={count}/>
@@ -26,7 +24,9 @@ const count = basket.length;
         ) : (
           <div className="empty">Sorry, no items in basket...</div>
         ) }
-        <BasketTotal basketTotal={basketTotal} />
+
+<h2 className="basket-total">Total: £{basketTotal === 0 ? `0:00` : <BasketTotal basketTotal={basketTotal}/>}
+      </h2>
       </div>
     );
 }
