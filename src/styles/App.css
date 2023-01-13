@@ -1,38 +1,23 @@
 * {
-
-  /* width: 1000px;
-  border: 15 px yellow;
-  padding: 10px;
-  margin: 10px;
-  background-color: gray; */
   box-sizing: border-box;
   margin: 0px;
   padding: 5px;
   border: 0;
- 
- 
 
+  
 }
+
 
 .App {
   text-align: center;
-  
-  background-color: rgb(116, 105, 105);
+  border-radius: 10px;
+  background-color: #EABF9F;
   /* display: flex;
   flex-direction: column; */
+  font-family: 'Cantata One', serif;
   
   
 }
-
-/* .App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  
-} */
 
 .basket-total {
   display: flex;
@@ -41,14 +26,15 @@
 }
 
 #navigation {
-margin: 0;
+margin: 10Px;
   display: flex;
  flex-direction: row;
  gap:  10px 20px;
 justify-content: center;
-
+border-radius: 10px;
  list-style-type: none;
-background-color: white;
+background-color: #FAF3E0;
+
  
 
 }
@@ -57,6 +43,8 @@ background-color: white;
   /* display: flex; */
   flex-direction: column;
   color: black;
+  font-family: 'Codystar', cursive;
+
 
  
 }
@@ -66,10 +54,11 @@ background-color: white;
   transition: 0.3s;
   margin-top: 5px;
   margin-bottom: 15px;
-  padding: 2px 16px;
-  border-bottom: 1px solid #2E382F;
+  padding: 6px 16px;
+ 
   display: flex;
-  background-color: white;
+  background-color: #FAF3E0;
+  border-radius: 10px;
 /*  
   padding-left: 10px;
   padding-right: 10px; */
@@ -83,15 +72,14 @@ background-color: white;
 .product-items {
   font-size: 16px;
   padding: 2px 16px;
-  float: right;
-  background-color: #2E382F;
+
 
 }
 
 img{
   max-width: 100px;
   flex-basis: 40%;
-  float: inline-start;
+
 
 }
 
@@ -99,6 +87,7 @@ a {
   color: black;
   padding:0 !important;
   margin: 0 !important;
+  text-decoration: none;
 }
 
 
@@ -109,7 +98,9 @@ a {
   width: 89%;
   margin-right: 5px;
   float: left;
-  background-color: white;
+  background-color: #1E212D;
+  color: white;
+  font-family: 'Cantata One', serif;
 }
 
 #searchAPI input[type=submit] {
@@ -120,7 +111,9 @@ a {
   align-content: center;
   justify-content: center;
   font-size: 0.8rem;
-  background-color: white;
+  background-color: #1E212D;
+  color: white;
+  font-family: 'Cantata One', serif;
 }
 
 .buttons {
@@ -130,4 +123,28 @@ a {
   align-items: center;
   justify-items: left;
   min-width: 105px;
+  font-family: 'Cantata One', serif;
 }
+
+#add-button {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #1E212D;
+  color: white;
+  font-family: 'Cantata One', serif;
+}
+
+.load-more-button {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #1E212D;
+  color: white;
+  font-family: 'Cantata One', serif;
+}
+
+
+@media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (max-width: 1200px) {}

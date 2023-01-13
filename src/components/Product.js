@@ -11,8 +11,8 @@ const Product = ({item,...props}) => {
         <img src={artworkUrl100}
         alt={artistName} />
       <div id={"product-items"}>
-        <h2>{trackName}</h2>
-        <h2>{artistName}</h2>
+        <h3>{trackName}</h3>
+        <h3>{artistName}</h3>
         <h4 className="price">{trackPrice?"£"+trackPrice:"0"} </h4>
       </div>
       <div className="buttons">
