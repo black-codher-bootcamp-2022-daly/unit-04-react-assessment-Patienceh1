@@ -107,7 +107,7 @@ function App() {
           removeFromBasket={removeFromBasket}
           itemCount={data.length}
         />
-        { loadMoreVisible && <button onClick={() => getData(products.length)}>
+        { loadMoreVisible && <button  className="load-more-button" onClick={() => getData(products.length)}>
           Load More Products
         </button>}
       </Container>
