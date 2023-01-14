@@ -2,7 +2,7 @@
 
 [TODO: Replace with your Netflify status badge]
 
-[TODO: Replace with a link to your Netlify deployed solution here]
+https://marvelous-tapioca-04fac4.netlify.app
 
 For your unit 4 assessment you will be building a Media Store App that allows users to search the iTunes store for music, videos, TV shows and other media types.
 
