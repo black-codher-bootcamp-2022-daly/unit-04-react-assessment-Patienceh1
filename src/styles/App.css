@@ -17,7 +17,6 @@
   font-family: 'Cantata One', serif;
   display: grid;
   
-  
 }
 
 .basket-total {
@@ -144,15 +143,24 @@ a {
 }
 
 @media only screen and (max-width: 480px) {
+
+  * {
+    margin: -6px;
+    padding: 5px;
+    border: 0;
+  }
   .title {
-    font-size: 16px;
+    font-size: 24px;
     margin: 5px;
+    gap: 5px;
+  
   }
   #navigation {
-    font-size: 10px;
-    padding: 5px 5px;
-    width: 65%;  
-    gap:  1px 1px;
+    font-size: 12px;
+    padding: 10px 10px;
+    width: 91%;  
+    gap:  10px 10px;
+    justify-content: space-around;
   }
   #searchAPI input[type=submit] {
     width: auto;
@@ -160,11 +168,26 @@ a {
     width: 89%; */
   }
   .App {
-    width: 100%;
+    width: 102%;
+    font-size: 12px;
+  }
+
+  img {
+    padding: 3px;
+    margin: 3px;
   }
   #searchAPI input[type=text] {
-    width: 50%;
+    width: 75%;
   }
+  .product-container {
+    display: flexbox;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    }
+ 
+
 }
 @media only screen and (max-width: 600px) {}
 @media only screen and (min-width: 600px) {}
@@ -172,7 +195,8 @@ a {
 @media only screen and (min-width: 992px) {
 
   .App {
-    width: 50%;
+    width: 100%;
+    
   }
 }
 @media only screen and (min-width: 1200px) {}
