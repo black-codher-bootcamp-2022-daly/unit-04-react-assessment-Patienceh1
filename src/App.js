@@ -12,7 +12,7 @@ import Container from "./components/Container";
 import BasketCount from "./components/BasketCount";
 
 function App() {
-  const [products, setProducts] = useState(data.slice(0,10));
+  const [products, setProducts] = useState(data.slice(0, 10));
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
   const [term, setTerm] = useState("");
@@ -67,11 +67,8 @@ function App() {
     setCount(count - 1);
   }
 
-  // console.log(products);
-
   async function search(value) {
-    const url = `https://itunes.apple.com/search?term=${value}&limit=30&explicit=no`;
-    const results = await fetch(url).then((res) => res.json());
+    const results = await fetch(`https://itunes.apple.com/search?term=${value}&limit=30&explicit=no`).then((res) => res.json());
     if (!results.error) {
       setProducts(
         results.results.filter(
@@ -108,9 +105,14 @@ function App() {
           removeFromBasket={removeFromBasket}
           itemCount={data.length}
         />
-        { loadMoreVisible && <button  className="load-more-button" onClick={() => getData(products.length)}>
-          Load More Products
-        </button>}
+        {loadMoreVisible && (
+          <button
+            className="load-more-button"
+            onClick={() => getData(products.length)}
+          >
+            Load More Products
+          </button>
+        )}
       </Container>
     );
   }

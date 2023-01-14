@@ -1,6 +1,5 @@
 import React from "react";
-
-
+// import debounce from "lodash.debounce";
 
 function Search(props) {
   const { search, term, setTerm } = props;
@@ -15,19 +14,8 @@ function Search(props) {
     search(term);
   }
 
-  function debounce (func,timeout = 300) {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer =setTimeout(()=> {func.apply(this, args);}, timeout)
-    };
-  }
-
-  function saveInput () {
-    console.log('saving data');
-  }
-
-  const processChange = debounce(() => saveInput());
+  // const updateQuery = e => setTerm(e?.target?.value);
+  // const debouncedOnChange = debounce(updateQuery,200)
 
   return (
     <form className="Search" id="searchAPI">
@@ -40,8 +28,7 @@ function Search(props) {
         value={props.term}
         onChange={handleChange}
         id="term"
-        onKeyUp={processChange}
-        placeholder='Search music, films, tv shows...'
+        placeholder="Search music, films, tv shows..."
       />
       <input className="Button-submit" type="submit" onClick={onSubmit} />
     </form>
