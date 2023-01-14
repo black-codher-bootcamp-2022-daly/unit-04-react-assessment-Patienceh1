@@ -20,7 +20,7 @@ function App() {
   const [loadMoreVisible, setLoadMoreVisible] = useState(true);
 
   function getData(currentCount) {
-    if (currentCount == data.length - 10) setLoadMoreVisible(false);
+    if (currentCount === data.length - 10) setLoadMoreVisible(false);
     return setProducts((currentProducts) => [
       ...currentProducts,
       ...data.slice(currentCount, currentCount + 10),
@@ -32,7 +32,7 @@ function App() {
   }, [term]);
 
   function addToBasket(trackId) {
-    products.map((product) => {
+    products.forEach((product) => {
       if (product.trackId === trackId) {
         product.inBasket = true;
         // console.log(product);
@@ -51,7 +51,7 @@ function App() {
 
   function removeFromBasket(trackId) {
     const removeFromCart = [];
-    basket.filter((products) => {
+    basket.forEach((products) => {
       if (products.trackId !== trackId) {
         removeFromCart.push(products);
       } else {
