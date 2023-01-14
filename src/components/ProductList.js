@@ -7,7 +7,7 @@ const ProductList = ({ items, ...props }) => {
 
   return (
     <div>
-      <h1 className="title">Suggested For You</h1>{" "}
+      <h1 className="basket-title">Suggested For You</h1>{" "}
       {!items || items.length === 0 ? (
         <div className="empty">No items found...</div>
       ) : (
