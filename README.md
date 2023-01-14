@@ -1,6 +1,6 @@
 # React Assessment
 
-[TODO: Replace with your Netflify status badge]
+[![Netlify Status](https://api.netlify.com/api/v1/badges/caf3b224-8775-4123-8075-bddbc6345a4c/deploy-status)](https://app.netlify.com/sites/marvelous-tapioca-04fac4/deploys)
 
 https://marvelous-tapioca-04fac4.netlify.app
 
