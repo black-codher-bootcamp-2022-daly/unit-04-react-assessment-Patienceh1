@@ -168,7 +168,7 @@ a {
     justify-items: space-around;
     display: flex;
     flex-direction: row;  
-    position: relative; left: 3.5px;
+    position: relative; left: 3.2px;
     
   }
   #searchAPI input[type=submit] {
@@ -195,7 +195,7 @@ a {
     margin: 3px;
   }
   #searchAPI input[type=text] {
-    width: 73%;
+    width: 100%;
     justify-content: center;
     border-radius: 5px;
  
