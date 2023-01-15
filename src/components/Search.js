@@ -5,21 +5,22 @@ function Search(props) {
   const { search, term, setTerm } = props;
 
   function handleChange(changeEvent) {
-    props.search(props.term);
+    // props.search(props.term);
+    changeEvent.preventDefault();
     setTerm(changeEvent.target.value);
   }
 
-  function onSubmit(event) {
+  async function onSubmit(event) {
     event.preventDefault();
-    search(term);
+    await search(term);
   }
 
   // const updateQuery = e => setTerm(e?.target?.value);
   // const debouncedOnChange = debounce(updateQuery,200)
 
   return (
-    <form className="Search" id="searchAPI">
-      <p style={{ color: "white" }}>
+    <form className="Search" id="searchAPI" >
+      <p className="search-render">
         <em>{term && "Keywords Typed: " + term}</em>
       </p>
       <input
@@ -28,10 +29,13 @@ function Search(props) {
         value={props.term}
         onChange={handleChange}
         id="term"
+        name="term"
+        autoFocus="autoFocus"
         placeholder="Search music, films, tv shows..."
       />
       <input className="Button-submit" type="submit" onClick={onSubmit} />
-    </form>
+     </form> 
+  
   );
 }
 export default Search;

@@ -39,14 +39,20 @@ background-color: #FAF3E0;
 
 }
 
+.search-render {
+  color: white;
+}
+
 .title {
   /* display: flex; */
   flex-direction: column;
   color: black;
   font-family: 'Codystar', cursive;
+}
 
-
- 
+.basket-title {
+  font-family: 'Codystar', cursive;
+  color: black;
 }
 
 .product-container {
