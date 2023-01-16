@@ -30,7 +30,6 @@ function Search(props) {
         onChange={handleChange}
         id="term"
         name="term"
-        autoFocus="autoFocus"
         placeholder="Search music, films, tv shows..."
       />
       <input className="Button-submit" type="submit" onClick={onSubmit} />
