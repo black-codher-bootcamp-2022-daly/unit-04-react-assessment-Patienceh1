@@ -95,9 +95,13 @@ function App() {
     );
   }
 
-  function Home() {
-    return (
-      <Container>
+
+  return (
+    <Router>
+      <div className="App">
+        <Header itemCount={count} />
+        <Routes>
+          <Route index path="/" element={<Container>
         <Search term={term} setTerm={setTerm} search={search} />
         <ProductList
           items={products}
@@ -113,15 +117,7 @@ function App() {
             Load More Products
           </button>
         )}
-      </Container>
-    );
-  }
-  return (
-    <Router>
-      <div className="App">
-        <Header itemCount={count} />
-        <Routes>
-          <Route index path="/" element={<Home />} />
+      </Container>} />
           <Route path="/about" element={<About />} />
           <Route path="/basket" element={<BasketList />} />
         </Routes>

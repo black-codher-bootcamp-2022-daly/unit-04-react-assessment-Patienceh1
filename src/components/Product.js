@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Product = ({ item, ...props }) => {
-  // console.log(props)
+   console.log(props)
 
   const { trackName, trackId, artistName, trackPrice, artworkUrl100 } = item;
   return (
