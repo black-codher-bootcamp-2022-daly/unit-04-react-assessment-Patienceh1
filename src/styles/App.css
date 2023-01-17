@@ -3,16 +3,20 @@
   margin: 0px;
   padding: 5px;
   border: 0;
+
+  
 }
+
 
 .App {
   text-align: center;
   border-radius: 10px;
-  background-color: #eabf9f;
+  background-color: #EABF9F;
   /* display: flex;
   flex-direction: column; */
-  font-family: "Cantata One", serif;
+  font-family: 'Cantata One', serif;
   display: grid;
+  
 }
 
 .basket-total {
@@ -22,26 +26,33 @@
 }
 
 #navigation {
-  margin: 10px;
+margin: 10Px;
   display: flex;
-  flex-direction: row;
-  gap: 10px 20px;
-  justify-content: center;
-  border-radius: 10px;
-  list-style-type: none;
-  background-color: #faf3e0;
+ flex-direction: row;
+ gap:  10px 20px;
+justify-content: center;
+border-radius: 10px;
+ list-style-type: none;
+background-color: #FAF3E0;
+
+ 
+
+}
+
+.search-render {
+  color: white;
 }
 
 .title {
   /* display: flex; */
   flex-direction: column;
   color: black;
-  font-family: "Codystar", cursive;
+  font-family: 'Codystar', cursive;
 }
 
 .basket-title {
-    font-family: "Codystar", cursive;
-    color: white;
+  font-family: 'Codystar', cursive;
+  color: black;
 }
 
 .product-container {
@@ -50,48 +61,55 @@
   margin-top: 5px;
   margin-bottom: 15px;
   padding: 6px 16px;
-
+ 
   display: flex;
-  background-color: #faf3e0;
+  background-color: #FAF3E0;
   border-radius: 10px;
-  /*  
+/*  
   padding-left: 10px;
   padding-right: 10px; */
   text-align: start;
+ 
+  
 }
 #product-container:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
 }
 .product-items {
   font-size: 16px;
   padding: 2px 16px;
+
+
 }
 
-img {
+img{
   max-width: 100px;
   flex-basis: 40%;
+
+
 }
 
 a {
   color: black;
-  padding: 0 !important;
+  padding:0 !important;
   margin: 0 !important;
   text-decoration: none;
 }
 
-#searchAPI input[type="text"] {
+
+#searchAPI input[type=text]{
   border-radius: 5px;
   display: flex;
   padding: 15px 10px;
   width: 89%;
   margin-right: 5px;
   float: left;
-  background-color: #1e212d;
+  background-color: #1E212D;
   color: white;
-  font-family: "Cantata One", serif;
+  font-family: 'Cantata One', serif;
 }
 
-#searchAPI input[type="submit"] {
+#searchAPI input[type=submit] {
   width: 10%;
   display: flex;
   padding: 15px 10px;
@@ -99,9 +117,9 @@ a {
   align-content: center;
   justify-content: center;
   font-size: 0.8rem;
-  background-color: #1e212d;
+  background-color: #1E212D;
   color: white;
-  font-family: "Cantata One", serif;
+  font-family: 'Cantata One', serif;
 }
 
 .buttons {
@@ -111,26 +129,27 @@ a {
   align-items: center;
   justify-items: left;
   min-width: 105px;
-  font-family: "Cantata One", serif;
+  font-family: 'Cantata One', serif;
 }
 
 #add-button {
   padding: 15px;
   border-radius: 10px;
-  background-color: #1e212d;
+  background-color: #1E212D;
   color: white;
-  font-family: "Cantata One", serif;
+  font-family: 'Cantata One', serif;
 }
 
 .load-more-button {
   padding: 15px;
   border-radius: 10px;
-  background-color: #1e212d;
+  background-color: #1E212D;
   color: white;
-  font-family: "Cantata One", serif;
+  font-family: 'Cantata One', serif;
 }
 
 @media only screen and (max-width: 480px) {
+
   * {
     margin: -6px;
     padding: 5px;
@@ -140,27 +159,25 @@ a {
     font-size: 24px;
     margin: 5px;
     gap: 5px;
-    position: relative;
-    left: -6px;
+    position: relative; left: -6px;
   }
 
   .basket-title {
-    position: relative;
-    top: 10px;
-    font-family: "Codystar", cursive;
+    position: relative; top: 10px;
+    font-family: 'Codystar', cursive;
   }
   #navigation {
     font-size: 12px;
     padding: 10px 10px;
-    width: 91%;
-    gap: 10px 10px;
+    width: 91%;  
+    gap:  10px 10px;
     justify-items: space-around;
     display: flex;
-    flex-direction: row;
-    position: relative;
-    left: 3.2px;
+    flex-direction: row;  
+    position: relative; left: 3.5px;
+    
   }
-  #searchAPI input[type="submit"] {
+  #searchAPI input[type=submit] {
     width: 23%;
     display: flex;
     padding: 15px 10px;
@@ -168,12 +185,11 @@ a {
     align-content: center;
     justify-content: center;
     font-size: 0.8rem;
-    background-color: #1e212d;
+    background-color: #1E212D;
     color: white;
-    font-family: "Cantata One", serif;
+    font-family: 'Cantata One', serif;
     font-size: 11px;
-    position: relative;
-    top: -5.5px;
+    position: relative; top: -5.5px;
   }
   .App {
     width: 102%;
@@ -184,17 +200,18 @@ a {
     padding: 3px;
     margin: 3px;
   }
-  #searchAPI input[type="text"] {
-    width: 100%;
+  #searchAPI input[type=text] {
+    width: 73%;
     justify-content: center;
     border-radius: 5px;
+ 
+  padding: 15px 10px;
+  margin-right: 5px;
+ 
+  background-color: #1E212D;
+  color: white;
+  font-family: 'Cantata One', serif;
 
-    padding: 15px 10px;
-    margin-right: 5px;
-
-    background-color: #1e212d;
-    color: white;
-    font-family: "Cantata One", serif;
   }
   .product-container {
     display: flexbox;
@@ -202,23 +219,20 @@ a {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-  }
-
-  .Link {
-    position: relative;
-    top: 18px;
-  }
+    }
+ 
+    .Link {
+      position: relative; top: 18px;
+    }
 }
-@media only screen and (max-width: 600px) {
-}
-@media only screen and (min-width: 600px) {
-}
-@media only screen and (min-width: 768px) {
-}
+@media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {}
 @media only screen and (min-width: 992px) {
+
   .App {
     width: 100%;
+    
   }
 }
-@media only screen and (min-width: 1200px) {
-}
+@media only screen and (min-width: 1200px) {}
